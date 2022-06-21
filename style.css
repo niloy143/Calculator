@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background: #555;
+    position: relative;
+}
+
+.calc {
+    width: 330px;
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.calc div {
+    border: 1px solid #888;
+}
+
+.calc p {
+    background: #dedede;
+    color: #333;
+    padding: 10px 15px 0 15px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.calc input {
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 100px;
+    padding: 0 15px 15px 15px;
+    background: #dedede;
+    font-size:34px;
+    color: #333;
+    font-family: geneva;
+}
+
+.calc .input td {
+    background: #333;
+    color: white;
+    width: 80px;
+    height: 70px;
+    text-align: center;
+    margin-left: 2px;
+    font-size: 30px;
+}
+
+.calc .input td:hover {
+    box-shadow: inset 1px 1px 10px black;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.calc .input td:active {
+    box-shadow: none;
+    border-radius: 0;
+}
