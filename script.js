@@ -1,41 +1,56 @@
-var result = document.getElementsByTagName('input')[0]
-var small = document.getElementById('small')
-function num(x) {
-    result.value += x;
-}
+var input = document.getElementById('input');
+var small = document.getElementById('small');
+var operat = ['^', '=', '×', '÷', '−', '+'];
 
 function clr() {
-    result.value = '';
-    small.innerHTML = '0';
+    input.value = '';
+    small.value = '';
 }
 
 function del() {
-    result.value = result.value.slice(0, (result.value.length-1))
+    input.value = input.value.slice(0, (input.value.length-1))
+}
+
+function num(x) {
+    input.value += x;
+}
+
+function oprt(x) {
+    if((input.value[0] == '+' || input.value[0] == '−' || input.value[0] == '×' || input.value[0] == '÷' || input.value[0] == '^') && input.value.length == 1){
+        input.value = x;
+    }
+    else if(input.value[0] == '+' || input.value[0] == '−' || input.value[0] == '×' || input.value[0] == '÷' || input.value[0] == '^') {
+        var a = Number(small.value);
+        var b = Number(input.value.slice(1, input.value.length));
+            if     (input.value[0] == '+') {small.value = a+b}
+            else if(input.value[0] == '−') {small.value = a-b}
+            else if(input.value[0] == '×') {small.value = a*b}
+            else if(input.value[0] == '÷') {small.value = a/b}
+            else if(input.value[0] == '^') {small.value = a**b}
+            else{};
+        input.value = x;
+    }else{
+        small.value = input.value.slice(0, input.value.length);
+        input.value = x;
+    }
 }
 
 function sum() {
-    if (result.value == '') {
-        alert('Enter some value')
-    } else {
-    try{
-    small.innerHTML = result.value;
-    for(var i=0; i<result.value.length; i++){
-        if(result.value[i] == '−'){
-            result.value = result.value.replace('−', '-');
-        }else if(result.value[i] == '×') {
-            result.value = result.value.replace('×', '*');
-        }else if(result.value[i] == '÷') {
-            result.value = result.value.replace('÷', '/');
-        }else if(result.value[i] == '^') {
-            result.value = result.value.replace('^', '**');
-        }
+    if((input.value[0] == '+' || input.value[0] == '−' || input.value[0] == '×' || input.value[0] == '÷' || input.value[0] == '^') && input.value.length == 1){
+        input.value = small.value;
     }
-    result.value = eval(result.value)
-    }catch{
-        alert('Invalid Value');
-        small.innerHTML='0';
-        result.value = '';
+    else if(input.value[0] == '+' || input.value[0] == '−' || input.value[0] == '×' || input.value[0] == '÷' || input.value[0] == '^') {
+        var a = Number(small.value);
+        var b = Number(input.value.slice(1, input.value.length));
+        var result = '';
+            if     (input.value[0] == '+') {result = a+b; small.value = a + ' + ' + b}
+            else if(input.value[0] == '−') {result = a-b; small.value = a + ' − ' +b}
+            else if(input.value[0] == '×') {result = a*b; small.value = a + ' × ' +b}
+            else if(input.value[0] == '÷') {result = a/b; small.value = a + ' ÷ ' +b}
+            else if(input.value[0] == '^') {result = a**b; small.value = a + ' ^ ' +b}
+            else{};
+        input.value = '= ' + result;
     }
-}
+    else{small.value = input.value}
 }
 

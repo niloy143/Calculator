@@ -11,39 +11,39 @@
     
     <div class="calc">
         <div class="output">
-            <p id="small">0</p>
-            <input type="text" placeholder="0">
+            <input placeholder="0" id="small" readonly>
+            <input type="text" placeholder="0" id="input">
         </div>
         <div class="input">
             <table>
                 <tr>
                     <td onclick="clr()">AC</td>
                     <td onclick="del()">Del</td>
-                    <td onclick="num('^')">X<sup>n</sup></td>
+                    <td onclick="oprt('^')">X<sup>n</sup></td>
                     <td onclick="sum()">=</td>
                 </tr>
                 <tr>
                     <td onclick="num('7')">7</td>
                     <td onclick="num('8')">8</td>
                     <td onclick="num('9')">9</td>
-                    <td onclick="num('×')">×</td>
+                    <td onclick="oprt('×')">×</td>
                 </tr>
                 <tr>
                     <td onclick="num('4')">4</td>
                     <td onclick="num('5')">5</td>
                     <td onclick="num('6')">6</td>
-                    <td onclick="num('÷')">÷</td>
+                    <td onclick="oprt('÷')">÷</td>
                 </tr>
                 <tr>
                     <td onclick="num('1')">1</td>
                     <td onclick="num('2')">2</td>
                     <td onclick="num('3')">3</td>
-                    <td onclick="num('−')">−</td>
+                    <td onclick="oprt('−')">−</td>
                 </tr>
                 <tr>
                     <td onclick="num('.')">.</td>
                     <td onclick="num('0')">0</td>
-                    <td onclick="num('+')" colspan="2">+</td>
+                    <td onclick="oprt('+')" colspan="2">+</td>
                 </tr>
             </table>
         </div>
