@@ -49,7 +49,7 @@ function sum() {
             else if(input.value[0] == '÷') {result = a/b; small.value = a + ' ÷ ' +b}
             else if(input.value[0] == '^') {result = a**b; small.value = a + ' ^ ' +b}
             else{};
-        input.value = '= ' + result;
+        input.value = result;
     }
     else{small.value = input.value}
 }
