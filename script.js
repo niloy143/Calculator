@@ -15,6 +15,8 @@ function num(x) {
     input.value += x;
 }
 
+//============================= Operators Function ===========================
+
 function oprt(x) {
     if((input.value[0] == '+' || input.value[0] == '−' || input.value[0] == '×' || input.value[0] == '÷' || input.value[0] == '^') && input.value.length == 1){
         input.value = x;
@@ -35,6 +37,8 @@ function oprt(x) {
     }
 }
 
+//========================== Equal Function ====================================
+
 function sum() {
     if((input.value[0] == '+' || input.value[0] == '−' || input.value[0] == '×' || input.value[0] == '÷' || input.value[0] == '^') && input.value.length == 1){
         input.value = small.value;
@@ -54,3 +58,4 @@ function sum() {
     else{small.value = input.value}
 }
 
+//=========================== Calculator Done ========================================
