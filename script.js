@@ -46,7 +46,8 @@ function oprt(x) {
             else if(input.value[0] == '^') {small.value = a**b}
             else{};
         input.value = x;
-    }else if(input.value == '') {input.value += x;}
+    }else if(input.value == '' && small.value == '') {input.value = ''}
+    else if(input.value == '') {input.value += x;}
     else{
         small.value = input.value;
         input.value = x;
