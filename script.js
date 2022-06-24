@@ -15,6 +15,21 @@ function num(x) {
     input.value += x;
 }
 
+function dec(x) {
+    if((input.value == '') || ((input.value[0] == '+' || input.value[0] == '−' || input.value[0] == '×' || input.value[0] == '÷' || input.value[0] == '^') && input.value.length == 1)) {
+        input.value += '0'+x;
+    }
+    if(!(input.value.includes('.'))){
+        input.value += x;
+    }
+}
+
+function zero(x) {
+    if(!(input.value == '')){
+        input.value += x;
+    }
+}
+
 //============================= Operators Function ===========================
 
 function oprt(x) {
@@ -31,8 +46,9 @@ function oprt(x) {
             else if(input.value[0] == '^') {small.value = a**b}
             else{};
         input.value = x;
-    }else{
-        small.value = input.value.slice(0, input.value.length);
+    }else if(input.value == '') {input.value += x;}
+    else{
+        small.value = input.value;
         input.value = x;
     }
 }
